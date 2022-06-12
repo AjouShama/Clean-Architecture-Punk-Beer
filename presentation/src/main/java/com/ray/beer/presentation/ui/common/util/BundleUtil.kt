@@ -2,6 +2,9 @@ package com.ray.beer.presentation.ui.common.util
 
 import android.os.Bundle
 import androidx.lifecycle.SavedStateHandle
+import com.ray.beer.domain.common.orEmpty
+import com.ray.beer.domain.common.orFalse
+import com.ray.beer.domain.common.orZero
 
 fun SavedStateHandle.getBundle(
     key: String

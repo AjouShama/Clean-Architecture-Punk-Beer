@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn
 
 @Reusable
-class GetRandomPunkBeer @Inject constructor(
+class GetRandomPunkBeerUseCase @Inject constructor(
     private val punkBeerRepository: PunkBeerRepository
 ) {
     operator fun invoke(): Flow<ResponseCover<PunkBeerPure>> {

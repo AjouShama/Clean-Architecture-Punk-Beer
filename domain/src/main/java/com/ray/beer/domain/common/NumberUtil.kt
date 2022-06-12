@@ -1,4 +1,4 @@
-package com.ray.beer.presentation.ui.common.util
+package com.ray.beer.domain.common
 
 fun Double?.orZero(): Double {
     return this ?: 0.0

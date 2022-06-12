@@ -1,4 +1,4 @@
-package com.ray.beer.presentation.ui.common.util
+package com.ray.beer.domain.common
 
 fun Boolean?.orFalse(): Boolean {
     return this ?: false

@@ -9,7 +9,8 @@ object PunkBeerDataConverter {
             id = punkBeer.id,
             name = punkBeer.name,
             tagline = punkBeer.tagline,
-            description = punkBeer.description
+            description = punkBeer.description,
+            imageUrl = punkBeer.image_url
         )
     }
 }
