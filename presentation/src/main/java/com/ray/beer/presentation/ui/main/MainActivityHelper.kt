@@ -1,8 +1,7 @@
-package com.ray.beer.presentation.helper.main
+package com.ray.beer.presentation.ui.main
 
 import android.content.Context
 import android.content.Intent
-import com.ray.beer.presentation.ui.main.MainActivity
 
 /**
  * Helper class

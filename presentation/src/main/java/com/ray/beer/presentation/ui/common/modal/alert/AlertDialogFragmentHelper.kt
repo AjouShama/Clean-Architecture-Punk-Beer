@@ -1,12 +1,10 @@
-package com.ray.beer.presentation.helper.common.modal.alert
+package com.ray.beer.presentation.ui.common.modal.alert
 
 import android.os.Bundle
 import androidx.lifecycle.SavedStateHandle
 import com.ray.beer.presentation.ui.common.util.getBooleanOrDefault
 import com.ray.beer.presentation.ui.common.util.getBundle
 import com.ray.beer.presentation.ui.common.util.getStringOrDefault
-import com.ray.beer.presentation.ui.common.modal.alert.AlertDialogFragment
-import com.ray.beer.presentation.ui.common.modal.alert.AlertDialogFragmentContract
 
 object AlertDialogFragmentHelper {
     private const val BUNDLE = "key_BUNDLE"
