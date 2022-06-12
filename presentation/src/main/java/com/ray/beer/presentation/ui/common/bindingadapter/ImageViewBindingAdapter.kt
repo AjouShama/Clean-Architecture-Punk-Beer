@@ -7,7 +7,9 @@ import com.ray.beer.presentation.R
 
 @BindingAdapter("imageUrl")
 fun ImageView.setImageUrl(imageUrl: String?) {
-    if (!imageUrl.isNullOrEmpty()) {
+    if (imageUrl.isNullOrEmpty()) {
+        setImageResource(R.drawable.ic_warning)
+    } else {
         Glide.with(this.context)
             .load(imageUrl)
             .error(R.drawable.ic_warning)
