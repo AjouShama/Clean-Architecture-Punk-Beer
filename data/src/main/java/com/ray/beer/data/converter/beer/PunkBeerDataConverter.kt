@@ -10,7 +10,7 @@ object PunkBeerDataConverter {
             name = punkBeer.name,
             tagline = punkBeer.tagline,
             description = punkBeer.description,
-            imageUrl = punkBeer.image_url
+            imageUrl = punkBeer.image_url.orEmpty()
         )
     }
 }

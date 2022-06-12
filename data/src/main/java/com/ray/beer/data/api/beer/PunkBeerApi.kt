@@ -6,5 +6,5 @@ import retrofit2.http.GET
 
 interface PunkBeerApi {
     @GET("/v2/beers/random")
-    fun getRandomPunkBeer(): ApiResponse<PunkBeerRes>
+    suspend fun getRandomPunkBeer(): ApiResponse<List<PunkBeerRes>>
 }

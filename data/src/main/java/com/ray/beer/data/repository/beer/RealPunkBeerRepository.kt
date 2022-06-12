@@ -21,7 +21,7 @@ class RealPunkBeerRepository @Inject constructor(
                 ResponseCover(
                     isSuccess = true,
                     statusCode = statusCode.code,
-                    data = PunkBeerDataConverter.convertDataToDomain(data)
+                    data = PunkBeerDataConverter.convertDataToDomain(data[0])
                 )
             )
         }.suspendOnError {

@@ -12,7 +12,7 @@ data class PunkBeerRes(
     val food_pairing: List<String>,
     val ibu: Double,
     val id: Int,
-    val image_url: String,
+    val image_url: String?,
     val ingredients: Ingredients,
     val method: Method,
     val name: String,
