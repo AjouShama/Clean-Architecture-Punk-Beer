@@ -17,6 +17,7 @@ android {
         versionName rootProject.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField "Boolean", "MOCK", "false"
     }
 
     buildTypes {
