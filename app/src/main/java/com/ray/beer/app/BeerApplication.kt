@@ -14,7 +14,7 @@ import com.facebook.flipper.plugins.navigation.NavigationFlipperPlugin
 import com.facebook.flipper.plugins.network.NetworkFlipperPlugin
 import com.facebook.flipper.plugins.sharedpreferences.SharedPreferencesFlipperPlugin
 import com.facebook.soloader.SoLoader
-import com.ray.beer.app.local.SharedPreferencesManager
+import com.ray.beer.data.local.SharedPreferencesManager
 import dagger.hilt.android.HiltAndroidApp
 import leakcanary.LeakCanary
 import timber.log.Timber

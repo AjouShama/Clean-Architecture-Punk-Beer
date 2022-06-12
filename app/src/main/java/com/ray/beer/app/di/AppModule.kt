@@ -1,7 +1,7 @@
 package com.ray.beer.app.di
 
 import android.content.Context
-import com.ray.beer.app.local.SharedPreferencesManager
+import com.ray.beer.data.local.SharedPreferencesManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

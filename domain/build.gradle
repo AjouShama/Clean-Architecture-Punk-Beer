@@ -21,42 +21,19 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    buildFeatures {
-        dataBinding true
-        viewBinding true
-    }
 }
 
 dependencies {
-    implementation project(":domain")
 
     //hilt
     implementation "com.google.dagger:hilt-android:$hiltVersion"
     kapt "com.google.dagger:hilt-android-compiler:$hiltVersion"
 
-    //lifecycle
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVersion"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
-
-    //glide
-    implementation "com.github.bumptech.glide:glide:$glideVersion"
-    kapt "com.github.bumptech.glide:compiler:$glideVersion"
-
-    //ted permission
-    implementation "io.github.ParkSangGwon:tedpermission-coroutine:$tedPermissionVersion"
-
     //coroutine
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
 
-    //lottie
-    implementation "com.airbnb.android:lottie:$lottieVersion"
-
     //timber
     implementation "com.jakewharton.timber:timber:$timberVersion"
-
-    //flipper
-    debugImplementation "com.facebook.flipper:flipper:$flipperVersion"
 
     //androidx
     implementation "androidx.core:core-ktx:$androidXCoreVersion"

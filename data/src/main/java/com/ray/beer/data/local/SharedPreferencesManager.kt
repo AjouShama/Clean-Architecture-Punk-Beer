@@ -1,4 +1,4 @@
-package com.ray.beer.app.local
+package com.ray.beer.data.local
 
 import android.content.Context
 import androidx.core.content.edit
