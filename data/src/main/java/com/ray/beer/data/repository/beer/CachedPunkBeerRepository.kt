@@ -1,5 +1,7 @@
 package com.ray.beer.data.repository.beer
 
+import com.ray.beer.core.di.NonCachedPunkBeer
+import com.ray.beer.core.util.replaceSpaceToUnderscore
 import com.ray.beer.domain.model.beer.PunkBeerPure
 import com.ray.beer.domain.model.common.ResponseCover
 import com.ray.beer.domain.repository.beer.PunkBeerRepository
@@ -8,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 class CachedPunkBeerRepository @Inject constructor(
-    private val punkBeerRepository: PunkBeerRepository
+    @NonCachedPunkBeer private val punkBeerRepository: PunkBeerRepository
 ) : PunkBeerRepository {
     var cachedBeers = HashMap<String, PunkBeerPure>()
 
@@ -17,6 +19,7 @@ class CachedPunkBeerRepository @Inject constructor(
     }
 
     override fun getPunkBeerByName(name: String): Flow<ResponseCover<PunkBeerPure>> {
+        val name = name.replaceSpaceToUnderscore()
         return if (cachedBeers.containsKey(name)) {
             flow {
                 emit(
@@ -32,8 +35,7 @@ class CachedPunkBeerRepository @Inject constructor(
                 punkBeerRepository.getPunkBeerByName(name).collect() {
                     if (it.isSuccess) {
                         val data = it.data ?: return@collect
-                        val key = data.name
-                        cachedBeers[key] = data
+                        cachedBeers[name] = data
                     }
                     emit(it)
                 }

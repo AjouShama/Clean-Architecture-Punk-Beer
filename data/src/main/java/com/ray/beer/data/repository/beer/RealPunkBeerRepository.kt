@@ -1,5 +1,6 @@
 package com.ray.beer.data.repository.beer
 
+import com.ray.beer.core.util.replaceSpaceToUnderscore
 import com.ray.beer.data.api.beer.PunkBeerApi
 import com.ray.beer.data.converter.beer.PunkBeerDataConverter
 import com.ray.beer.domain.model.beer.PunkBeerPure
@@ -44,6 +45,7 @@ class RealPunkBeerRepository @Inject constructor(
     }
 
     override fun getPunkBeerByName(name: String): Flow<ResponseCover<PunkBeerPure>> = flow {
+        val name = name.replaceSpaceToUnderscore()
         punkBeerApi.getPunkBeerByName(name).suspendOnSuccess {
             emit(
                 ResponseCover(
