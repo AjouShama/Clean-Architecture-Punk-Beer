@@ -16,18 +16,18 @@
         android:layout_height="match_parent"
         tools:context="com.ray.beer.presentation.ui.main.MainActivity">
 
-        <androidx.appcompat.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/title"
             style="@style/Typography.TextAppearance.Headline6"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_m"
             android:gravity="center"
-            android:text="@{vm.punkBeer.name}"
+            android:hint="원하는 beer 이름을 넣어주세요."
+            android:text="@={vm.punkBeerName}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="punk beer name" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/image"
@@ -66,16 +66,32 @@
             tools:text="description" />
 
         <com.ray.beer.presentation.ui.common.view.button.ConfirmButton
-            android:id="@+id/retry"
-            style="@style/Typography.ConfirmButton.Blue"
-            android:layout_width="match_parent"
+            android:id="@+id/random"
+            style="@style/Typography.ConfirmButton.BlueGray"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/spacing_m"
-            android:onClick="@{()->vm.onRetryClick()}"
-            android:text="재시도"
+            android:layout_marginStart="@dimen/spacing_m"
+            android:layout_marginEnd="@dimen/spacing_xs"
+            android:layout_marginBottom="@dimen/spacing_m"
+            android:onClick="@{()->vm.onRandomPunkBeerClick()}"
+            android:text="랜덤 Punk Beer"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/specific"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.ray.beer.presentation.ui.common.view.button.ConfirmButton
+            android:id="@+id/specific"
+            style="@style/Typography.ConfirmButton.Blue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_xs"
+            android:layout_marginEnd="@dimen/spacing_m"
+            android:layout_marginBottom="@dimen/spacing_m"
+            android:onClick="@{()->vm.onSpecificPunkBeerClick()}"
+            android:text="Punk Beer"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toEndOf="@id/random" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
