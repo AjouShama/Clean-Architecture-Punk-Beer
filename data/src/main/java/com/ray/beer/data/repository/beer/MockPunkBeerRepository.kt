@@ -16,4 +16,14 @@ class MockPunkBeerRepository : PunkBeerRepository {
             )
         )
     }
+
+    override fun getPunkBeerByName(name: String): Flow<ResponseCover<PunkBeerPure>> = flow {
+        emit(
+            ResponseCover(
+                isSuccess = true,
+                statusCode = 200,
+                data = PunkBeerPure.mock
+            )
+        )
+    }
 }

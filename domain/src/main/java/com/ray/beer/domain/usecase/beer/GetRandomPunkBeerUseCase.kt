@@ -1,5 +1,6 @@
 package com.ray.beer.domain.usecase.beer
 
+import com.ray.beer.core.di.CachedPunkBeer
 import com.ray.beer.domain.model.beer.PunkBeerPure
 import com.ray.beer.domain.model.common.ResponseCover
 import com.ray.beer.domain.repository.beer.PunkBeerRepository
@@ -11,7 +12,7 @@ import kotlinx.coroutines.flow.flowOn
 
 @Reusable
 class GetRandomPunkBeerUseCase @Inject constructor(
-    private val punkBeerRepository: PunkBeerRepository
+    @CachedPunkBeer private val punkBeerRepository: PunkBeerRepository
 ) {
     operator fun invoke(): Flow<ResponseCover<PunkBeerPure>> {
         return punkBeerRepository.getRandomPunkBeer()

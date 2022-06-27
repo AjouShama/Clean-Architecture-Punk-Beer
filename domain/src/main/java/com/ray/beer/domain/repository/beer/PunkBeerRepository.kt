@@ -6,4 +6,6 @@ import kotlinx.coroutines.flow.Flow
 
 interface PunkBeerRepository {
     fun getRandomPunkBeer(): Flow<ResponseCover<PunkBeerPure>>
+
+    fun getPunkBeerByName(name: String): Flow<ResponseCover<PunkBeerPure>>
 }

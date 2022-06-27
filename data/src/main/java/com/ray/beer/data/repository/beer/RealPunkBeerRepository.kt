@@ -42,4 +42,32 @@ class RealPunkBeerRepository @Inject constructor(
             )
         }
     }
+
+    override fun getPunkBeerByName(name: String): Flow<ResponseCover<PunkBeerPure>> = flow {
+        punkBeerApi.getPunkBeerByName(name).suspendOnSuccess {
+            emit(
+                ResponseCover(
+                    isSuccess = true,
+                    statusCode = statusCode.code,
+                    data = PunkBeerDataConverter.convertDataToDomain(data[0])
+                )
+            )
+        }.suspendOnError {
+            emit(
+                ResponseCover(
+                    isSuccess = false,
+                    statusCode = statusCode.code,
+                    data = null
+                )
+            )
+        }.suspendOnException {
+            emit(
+                ResponseCover(
+                    isSuccess = false,
+                    statusCode = null,
+                    data = null
+                )
+            )
+        }
+    }
 }
